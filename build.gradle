@@ -47,10 +47,13 @@ configurations {
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
 
-    // Optional Silent Gear integration. Both jars are built locally in this fork cluster;
-    // the integration class is only loaded at runtime when silentgear is actually installed.
+    // Optional Silent Gear integration. The built Silent Gear jar is shadowed and embeds the
+    // Silent Lib classes; loading silent-lib additionally as a separate mod duplicates those
+    // packages on the module path (JPMS ResolutionException), so only the Silent Gear jar is
+    // registered for runtime. The integration class is only loaded at runtime when silentgear
+    // is actually installed.
     compileOnly files(silentgear_jar, silentlib_jar)
-    localRuntime files(silentgear_jar, silentlib_jar)
+    localRuntime files(silentgear_jar)
 
     testImplementation(platform("org.junit:junit-bom:5.11.4"))
     testImplementation("org.junit.jupiter:junit-jupiter")
