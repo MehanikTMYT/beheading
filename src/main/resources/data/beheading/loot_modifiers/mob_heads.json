@@ -1,0 +1,9 @@
+{
+  "type": "beheading:mob_heads",
+  "conditions": [
+    {
+      "type": "minecraft:killed_by_player"
+    }
+  ],
+  "priority": 1000
+}

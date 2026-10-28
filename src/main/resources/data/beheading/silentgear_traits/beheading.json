@@ -1,0 +1,11 @@
+{
+  "max_level": 3,
+  "name": {
+    "translate": "trait.beheading.beheading"
+  },
+  "description": {
+    "translate": "trait.beheading.beheading.desc"
+  },
+  "effects": [],
+  "conditions": []
+}

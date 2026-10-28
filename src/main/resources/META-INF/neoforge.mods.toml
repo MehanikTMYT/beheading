@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="MehanikTMYT modpack team"
+description='''One bonus head-drop roll per death: a weapon enchantment (I-III) plus optional Silent Gear contributions, all resolved through a single shared calculation that never stacks a second roll on an existing head drop.'''
+[[dependencies.${mod_id}]]
+modId="neoforge"
+type="required"
+versionRange="${neo_version_range}"
+ordering="NONE"
+side="BOTH"
+[[dependencies.${mod_id}]]
+modId="minecraft"
+type="required"
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="BOTH"
+[[dependencies.${mod_id}]]
+modId="silentgear"
+type="optional"
+versionRange="[4.2,)"
+ordering="AFTER"
+side="SERVER"

@@ -1,0 +1,6 @@
+{
+  "enchantment.beheading.beheading": "Beheading",
+  "enchantment.beheading.beheading.desc": "Higher chance for mobs to drop their head when killed by the weapon.",
+  "trait.beheading.beheading": "Decapitation",
+  "trait.beheading.beheading.desc": "Increases the chance to drop the mob's head (projects onto the Beheading roll)."
+}
