@@ -46,7 +46,8 @@ public final class HeadChanceRoller {
                     BeheadingConfigSpec.ENABLE_VANILLA_HEADS.get(),
                     BeheadingConfigSpec.ENABLE_MODDED_HEADS.get(),
                     prefixed(BeheadingConfigSpec.MOB_BLACKLIST.get()),
-                    prefixed(BeheadingConfigSpec.MOB_WHITELIST.get()));
+                    prefixed(BeheadingConfigSpec.MOB_WHITELIST.get()),
+                    BeheadingConfigSpec.MATERIAL_TRAIT_BONUS_PER_LEVEL.get());
         } catch (RuntimeException error) {
             // Broken config values must fall back to defaults, never break loot generation.
             LOGGER.warn("Invalid Beheading config, using defaults", error);

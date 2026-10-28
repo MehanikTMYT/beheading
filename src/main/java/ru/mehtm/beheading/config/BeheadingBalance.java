@@ -10,8 +10,8 @@ import ru.mehtm.beheading.core.StackingMode;
  */
 public record BeheadingBalance(BeheadingConfig core, boolean requirePlayerKill, boolean allowProjectileKills,
         boolean allowAutomationKills, boolean enableVanillaHeads, boolean enableModdedHeads,
-        List<String> mobBlacklist, List<String> mobWhitelist) {
+        List<String> mobBlacklist, List<String> mobWhitelist, double silentGearTraitBonusPerLevel) {
 
     public static final BeheadingBalance DEFAULT = new BeheadingBalance(
-            BeheadingConfig.defaults(), true, false, false, true, true, List.of(), List.of());
+            BeheadingConfig.defaults(), true, false, false, true, true, List.of(), List.of(), 0.05D);
 }

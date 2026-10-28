@@ -16,6 +16,7 @@ import ru.mehtm.beheading.config.BeheadingConfigSpec;
 import ru.mehtm.beheading.loot.HeadChanceRoller;
 import ru.mehtm.beheading.loot.MobHeadLootModifier;
 import ru.mehtm.beheading.loot.MobHeads;
+import ru.mehtm.beheading.sg.BeheadingUpgradeItems;
 
 /**
  * Beheading — single bonus head-drop roll per death.
@@ -34,6 +35,10 @@ public final class Beheading {
     public Beheading(IEventBus modBus, ModContainer container) {
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, BeheadingConfigSpec.SPEC);
         LOOT_MODIFIERS.register(modBus);
+        // Optional Silent Gear integration content: upgrade module items. The parts, model
+        // wiring and trait stay data-driven; without Silent Gear installed the items are
+        // inert smithing ingredients.
+        BeheadingUpgradeItems.ITEMS.register(modBus);
 
         // The balance starts as DEFAULT: the config file loads later (SERVER configs load with
         // the server), so reading values here would just throw and warn. ModConfigEvent.Loading

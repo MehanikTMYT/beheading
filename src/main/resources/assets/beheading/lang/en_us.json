@@ -2,5 +2,11 @@
   "enchantment.beheading.beheading": "Beheading",
   "enchantment.beheading.beheading.desc": "Higher chance for mobs to drop their head when killed by the weapon.",
   "trait.beheading.beheading": "Decapitation",
-  "trait.beheading.beheading.desc": "Increases the chance to drop the mob's head (projects onto the Beheading roll)."
+  "trait.beheading.beheading.desc": "Increases the chance to drop the mob's head through the Beheading roll.",
+  "trait.beheading.beheading_upgrade": "Beheading Upgrade",
+  "trait.beheading.beheading_upgrade.desc": "Installed Beheading upgrade module, one per item. Upgrades the chance for mobs to drop their head.",
+  "item.beheading.beheading_upgrade_1": "Beheading Upgrade Module I",
+  "item.beheading.beheading_upgrade_2": "Beheading Upgrade Module II",
+  "item.beheading.beheading_upgrade_3": "Beheading Upgrade Module III",
+  "item.beheading.beheading_upgrade_4": "Beheading Upgrade Module IV"
 }
