@@ -35,8 +35,9 @@ public final class Beheading {
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, BeheadingConfigSpec.SPEC);
         LOOT_MODIFIERS.register(modBus);
 
-        // Initial snapshot (config defaults are only replaced by real values after the config file loads).
-        HeadChanceRoller.refreshBalance();
+        // The balance starts as DEFAULT: the config file loads later (SERVER configs load with
+        // the server), so reading values here would just throw and warn. ModConfigEvent.Loading
+        // and Reloading build the real snapshot as soon as the config is available.
         modBus.addListener(this::onConfigLoad);
         modBus.addListener(this::onConfigReload);
 
