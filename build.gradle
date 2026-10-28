@@ -22,6 +22,15 @@ base {
 // Mojang ships Java 25 to end users in 26.1.2, so mods target Java 25.
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
+// Opt-in dedicated-server regression probe, excluded from release artifacts. Declared before
+// the runs block: the runs DSL resolves modSource eagerly (same pattern as the SGQA probe).
+sourceSets {
+    qa {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += output + compileClasspath
+    }
+}
+
 runs {
     configureEach {
         systemProperty 'forge.logging.markers', 'REGISTRIES'
@@ -84,4 +93,10 @@ tasks.withType(ProcessResources).configureEach {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+// Optional regression probe jar: java -jar classpath companion for run-server tests.
+tasks.register('qaJar', Jar) {
+    archiveClassifier = 'qa'
+    from sourceSets.qa.output
 }
