@@ -14,4 +14,5 @@ public record BeheadingBalance(BeheadingConfig core, boolean requirePlayerKill, 
 
     public static final BeheadingBalance DEFAULT = new BeheadingBalance(
             BeheadingConfig.defaults(), true, false, false, true, true, List.of(), List.of(), 0.05D);
+    public static final int[] UPGRADE_LEVELS = {10, 17, 22, 25};
 }
